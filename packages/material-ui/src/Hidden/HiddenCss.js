@@ -7,7 +7,7 @@ import withStyles from '../styles/withStyles';
 
 const styles = theme => {
   const hidden = {
-    display: 'none',
+    display: 'none !important',
   };
 
   return breakpointKeys.reduce((acc, key) => {
@@ -44,6 +44,7 @@ function HiddenCss(props) {
     xlUp,
     xsDown,
     xsUp,
+    style,
     ...other
   } = props;
 
@@ -81,7 +82,7 @@ function HiddenCss(props) {
     });
   }
 
-  return <div className={classNames.join(' ')}>{children}</div>;
+  return <div className={classNames.join(' ')} style={style}>{children}</div>;
 }
 
 HiddenCss.propTypes = {
